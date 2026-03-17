@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractions, Decimals & Ratios · Interactive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <button id="sidebar-toggle" aria-label="Toggle sidebar">&#9776;</button>
+        <aside id="sidebar">
+            <div id="sidebar-header">
+                <h1>Fractions, Decimals &amp; Ratios</h1>
+                <p class="author">人教版 / Van de Walle</p>
+                <div id="progress-container">
+                    <div id="progress-bar"><div id="progress-fill"></div></div>
+                    <span id="progress-text">0%</span>
+                </div>
+            </div>
+            <div id="search-container"><input type="text" id="search-input" placeholder="Search topics..."></div>
+            <nav id="chapter-nav"></nav>
+            <div id="sidebar-footer"><p class="copyright-notice" style="font-size:0.7rem;color:#888;margin-top:12px;text-align:center;">&copy; 2026 Hengzhe Zhao · AGPL-3.0 &amp; Commercial</p><button id="reset-progress">Reset Progress</button></div>
+        </aside>
+        <main id="main-content">
+            <div id="welcome-screen">
+                <div class="welcome-hero">
+                    <h1>Fractions, Decimals &amp; Ratios</h1>
+                    <h2>Visual Fraction Models, Decimal Operations, and Proportional Reasoning</h2>
+                    <p class="welcome-description">Master fractions, decimals, and ratios through colorful visualizations and hands-on activities. Every concept made tangible!</p>
+                </div>
+                <div class="roadmap">
+                    <h3>Course Roadmap</h3>
+                    <div class="roadmap-parts">
+                        <div class="roadmap-part"><h4>Part A: Fractions</h4><ul><li>Ch 0: What is a Fraction?</li><li>Ch 1: Equivalent Fractions</li><li>Ch 2: Comparing &amp; Ordering</li><li>Ch 3: Adding &amp; Subtracting Fractions</li><li>Ch 4: Multiplying &amp; Dividing Fractions</li></ul></div>
+                        <div class="roadmap-part"><h4>Part B: Decimals</h4><ul><li>Ch 5: Decimal Place Value</li><li>Ch 6: Decimal Operations</li><li>Ch 7: Fractions &amp; Decimals</li></ul></div>
+                        <div class="roadmap-part"><h4>Part C: Ratios &amp; Proportions</h4><ul><li>Ch 8: Ratios</li><li>Ch 9: Proportions</li><li>Ch 10: Percent</li><li>Ch 11: Applications</li></ul></div>
+                    </div>
+                </div>
+                <p class="welcome-start">Select a chapter from the sidebar to begin!</p>
+            </div>
+            <div id="chapter-content" style="display:none;">
+                <div id="chapter-header"><div id="chapter-number-badge"></div><h1 id="chapter-title"></h1><p id="chapter-subtitle"></p></div>
+                <div id="section-tabs"></div>
+                <article id="section-content"></article>
+                <div id="exercises-panel" style="display:none;"><h3>Practice Time!</h3><div id="exercises-list"></div></div>
+                <div id="chapter-nav-buttons"><button id="prev-btn" disabled>&larr; Previous</button><span id="section-indicator"></span><button id="next-btn">Next &rarr;</button></div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script src="viz-engine.js"></script>
+    <script>
+    window.CHAPTER_MANIFEST = [
+        {number:0, id:'ch00', title:'What is a Fraction?',              file:'ch00-what-is-fraction'},
+        {number:1, id:'ch01', title:'Equivalent Fractions',             file:'ch01-equivalent-fractions'},
+        {number:2, id:'ch02', title:'Comparing & Ordering',             file:'ch02-comparing-ordering'},
+        {number:3, id:'ch03', title:'Adding & Subtracting Fractions',   file:'ch03-add-subtract'},
+        {number:4, id:'ch04', title:'Multiplying & Dividing Fractions', file:'ch04-multiply-divide'},
+        {number:5, id:'ch05', title:'Decimal Place Value',              file:'ch05-decimal-place-value'},
+        {number:6, id:'ch06', title:'Decimal Operations',               file:'ch06-decimal-operations'},
+        {number:7, id:'ch07', title:'Fractions & Decimals',             file:'ch07-fractions-decimals'},
+        {number:8, id:'ch08', title:'Ratios',                           file:'ch08-ratios'},
+        {number:9, id:'ch09', title:'Proportions',                      file:'ch09-proportions'},
+        {number:10,id:'ch10', title:'Percent',                          file:'ch10-percent'},
+        {number:11,id:'ch11', title:'Applications',                     file:'ch11-applications'}
+    ];
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
